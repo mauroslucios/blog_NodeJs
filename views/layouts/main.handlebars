@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog NodeJs</title>
-    <!-- MDB icon -->
+    <!-- icon -->
     <link rel="icon" href="/img/" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
@@ -13,20 +13,34 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
-    <!-- MDB -->
-    <link rel="stylesheet" href="/css/mdb.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     {{>_navbar}}
+   
     <div class="container mt-4">
+      <div class="col-md-6">
+         {{>_msg}}
+      </div>
        {{{body}}}
     </div>
     {{>_footer}}
 </body>
 <!-- End your project here-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+    $("#success-alert").hide();
+    $("#myWish").click(function showAlert() {
+      $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+        $("#success-alert").slideUp(500);
+      });
+    });
+  });
 
-    <!-- MDB -->
-    <script type="text/javascript" src="/js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+</script>
+
 </html>

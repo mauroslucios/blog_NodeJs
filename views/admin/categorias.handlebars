@@ -1,9 +1,26 @@
 <div class="row">
-    <h2>Lista de categorias</h2>
-    <hr>
+    <div class="col-md-8">
+        <h2>Lista de categorias</h2>
+    </div>
     <div class="col-md-4">
         <a href="/admin/categorias/add">
             <button type="button" class="btn btn-success">Nova Categoria</button>
         </a>
     </div>
 </div>
+
+{{#each categorias}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{nome}}</h4>
+            <small style="display: block;">{{slug}}</small>
+            <small style="display: block;">Data de criação: {{date}}</small>
+            <a href="/admin/categorias/edit/{{_id}}">
+                <button type="button" class="btn btn-warning mt-4">Editar categoria</button>
+            </a>
+        </div>
+    </div>
+{{else}}
+
+{{/each}}
+    
